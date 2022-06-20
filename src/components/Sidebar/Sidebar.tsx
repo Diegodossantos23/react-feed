@@ -10,7 +10,11 @@ export const Sidebar = () => {
             />
             
             <div className={styles.profile}>
-                <img className={styles.avatar} src="https://github.com/Diegodossantos23.png"/>
+                <img 
+                    className={styles.avatar} 
+                    src="https://github.com/Diegodossantos23.png"
+                />
+                
                 <strong className={styles.name}>Diego Rosa</strong>
                 <span className={styles.role}>Front-end Developer</span>
             </div>
@@ -18,9 +22,10 @@ export const Sidebar = () => {
             <footer className={styles.footer}>
                 <a 
                     className={styles.link} 
-                    href="#">
-                        <PencilLine size={20}/>
-                        Edit your profile
+                    href="#"
+                >
+                    <PencilLine size={20}/>
+                    Edit your profile
                 </a>
             </footer>
         </aside>
