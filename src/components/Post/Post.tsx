@@ -30,6 +30,18 @@ export const Post = ({ author, country, content }: PostProps) => {
                 <p>👉<a href="">diego.frontend/doctorcare</a></p>
                 <p><a href="">#newproject #nlw #rocketseat </a></p>
             </div>
+
+            <form className={styles.commentForm}>
+                <strong className={styles.strong}>Your Comment</strong>
+                
+                <textarea className={styles.commentText}
+                    placeholder='Your comment'
+                />
+
+                <footer className={styles.footer}>
+                    <button className={styles.publishButton} type='submit'>Publish</button>
+                </footer>
+            </form>
         </article>
     )
 } 
