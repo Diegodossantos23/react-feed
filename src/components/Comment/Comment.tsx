@@ -4,7 +4,7 @@ import styles from './Comment.module.css';
 export const Comment = () => {
     return(
        <div className={styles.comment}>
-           <img src="https://github.com/Diegodossantos23.png" alt=''/>
+           <img className={styles.avatar} src="https://github.com/Diegodossantos23.png" alt=''/>
             
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
@@ -15,7 +15,7 @@ export const Comment = () => {
                         </div>
 
                         <button className={styles.deleteButton} title="Delete comment">
-                            <Trash size={20}/>
+                            <Trash size={24}/>
                         </button>
                     </header>
 
