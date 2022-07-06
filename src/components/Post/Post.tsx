@@ -6,9 +6,10 @@ interface PostProps {
     author: string;
     country: string;
     content: string;
+    publishedAt: string;
 }
 
-export const Post = ({ author, country, content }: PostProps) => {
+export const Post = ({ author, country, content, publishedAt }: PostProps) => {
     
     return(
         <article className={styles.post}>
