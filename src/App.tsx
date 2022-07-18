@@ -26,7 +26,7 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl:  'https://github.com/Diegodossantos23.png',
+      avatarUrl:  'https://media-exp1.licdn.com/dms/image/C4E03AQFhOkRvac2IAw/profile-displayphoto-shrink_200_200/0/1602610450280?e=1663804800&v=beta&t=JgP6mu_Bq4AyPUGrZ6ujxuI8EU2sxi3MDMDQ8WT6eC8',
       name: 'Hitalo',
       role: 'Back-end Developer'
     },
