@@ -1,37 +1,54 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import enUS from 'date-fns/locale/en-US';
+
 import { Avatar } from '../Avatar/Avatar';
 import { Comment } from '../Comment/Comment';
+
 import styles from './Post.module.css';
 
 interface PostProps {
-    author: string;
-    country: string;
-    content: string;
-    publishedAt: string;
+    author: any;
+    content: any;
+    publishedAt: any;
 }
 
-export const Post = ({ author, country, content, publishedAt }: PostProps) => {
-    
+export const Post: React.FC<PostProps> = ({ author, publishedAt, content }) => {
+
+    const publishedDateFormatted = format(publishedAt, "LLLL  d 'at' HH:mm 'h'", {
+        locale: enUS
+    })
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+        locale: enUS,
+        addSuffix: true
+    })
+
     return(
         <article className={styles.post}>
 
             <header className={styles.header}>
                 <div className={styles.author}>
-                    <Avatar hasBorder src={"https://github.com/Diegodossantos23.png"}/>
+                    <Avatar hasBorder src={author.avatarUrl}/>
                     <div className={styles.info}>
-                        <strong className={styles.name}>Diego dos Santos</strong>
-                        <span className={styles.role}>Front-end Developer</span>
+                        <strong className={styles.name}>{author.name}</strong>
+                        <span className={styles.role}>{author.role}</span>
 
                     </div>
                 </div>
 
-                <time className={styles.time} title="June 20 at 15:30 PM" dateTime={"2022-20-06"}>Published 1 hour ago</time>
+                <time className={styles.time} title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+                    {publishedDateRelativeToNow}
+                </time>
             </header>
 
             <div className={styles.content}>
-                <p>Hey guys</p>
-                <p>I just uploaded another project in my portfolio. It's a project I did at NLW Return, Rocketseat event. The project name is DoctorCare 🚀</p>
-                <p>👉<a href="">diego.frontend/doctorcare</a></p>
-                <p><a href="">#newproject #nlw #rocketseat </a></p>
+                {content.map(line => {
+                    if(line.type === 'paragraph') {
+                        return <p>{line.content}</p>
+                    } else if(line.type === 'link') {
+                        return <p><a href=''>{line.content}</a></p>
+                    }
+                })}
             </div>
 
             <form className={styles.commentForm}>
