@@ -6,33 +6,29 @@ import { Avatar } from '../Avatar/Avatar';
 import { Comment } from '../Comment/Comment';
 
 import styles from './Post.module.css';
-interface PostProps {
+
+/*interface PostProps {
     author: any;
     content: any;
     publishedAt: any;
-}
+}*/
 
-export const Post: React.FC<PostProps> = ({ author, publishedAt, content }) => {
-    const [comments, setComments] = useState([
-        1,
-        2,
-    ]);
+export const Post = ({ author, publishedAt, content }) => {
+    const [comments, setComments] = useState(['Cool post bro!']);
+    const [ newCommentText, setNewCommentText ] = useState('');
 
-    const publishedDateFormatted = format(publishedAt, "LLLL  d 'at' HH:mm 'h'", {
-        locale: enUS
-    })
+    const publishedDateFormatted = format(publishedAt, "LLLL  d 'at' HH:mm 'h'", { locale: enUS })
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { locale: enUS, addSuffix: true })
 
-    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
-        locale: enUS,
-        addSuffix: true
-    })
-
-    const handleCreateNewCommen = () => {
+    const handleCreateNewComment = () => {
         event?.preventDefault();
 
-        setComments([...comments, comments.length++]);
+        setComments([ ...comments, newCommentText ]);
+        setNewCommentText('');
+    }
 
-        comments.push(3);
+    const handleNewCommentChange = () => {
+        setNewCommentText(event?.target.value);
     }
 
     return(
@@ -56,14 +52,14 @@ export const Post: React.FC<PostProps> = ({ author, publishedAt, content }) => {
             <div className={styles.content}>
                 {content.map(line => {
                     if(line.type === 'paragraph') {
-                        return <p>{line.content}</p>
+                        return <p key={line.content}>{line.content}</p>
                     } else if(line.type === 'link') {
-                        return <p><a href=''>{line.content}</a></p>
+                        return <p key={line.content}><a href=''>{line.content}</a></p>
                     }
                 })}
             </div>
 
-            <form onSubmit={handleCreateNewCommen} className={styles.commentForm}>
+            <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'end',
@@ -72,7 +68,10 @@ export const Post: React.FC<PostProps> = ({ author, publishedAt, content }) => {
                 </div>
 
                 <textarea className={styles.commentText}
+                    name='comment'
                     placeholder='Your comment'
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
                 />
 
                 <footer className={styles.footer}>
@@ -83,7 +82,7 @@ export const Post: React.FC<PostProps> = ({ author, publishedAt, content }) => {
             <div className={styles.commentList}>
 
                {comments.map(comment => {
-                return <Comment/>
+                return <Comment key={comment} content={comment}/>
                })}
 
             </div>

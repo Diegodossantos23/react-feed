@@ -7,7 +7,7 @@ export const Sidebar = () => {
         <aside className={styles.sidebar}>
             <img 
                 className={styles.cover} 
-                src={"https://media-exp1.licdn.com/dms/image/C4D16AQEhNOdSRk5W1w/profile-displaybackgroundimage-shrink_350_1400/0/1617631715305?e=1660780800&v=beta&t=dQ2hzb4CoTPCTaV5CqCivOexZDg0-WPvzPSRmHIuXMA"}
+                src={"https://media-exp1.licdn.com/dms/image/C4D16AQEhNOdSRk5W1w/profile-displaybackgroundimage-shrink_350_1400/0/1617631715305?e=1666224000&v=beta&t=aeL1RVzACBNeeSHmpk99Tp1AgOs-zB5twK45pbK2qOw"}
             />
             
             <div className={styles.profile}>
