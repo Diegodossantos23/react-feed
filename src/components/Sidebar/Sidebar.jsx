@@ -13,7 +13,7 @@ export const Sidebar = () => {
             <div className={styles.profile}>
 
                 <Avatar 
-                    src={"https://github.com/Diegodossantos23.png"}
+                    src={"https://media-exp1.licdn.com/dms/image/C4D03AQG-moZWcL1qMg/profile-displayphoto-shrink_800_800/0/1654342657951?e=1666224000&v=beta&t=wQOXZVFfnwbSROW_8XlbDZJRspmSs97o1LD003S9MPk"}
                 />
                 
                 <strong className={styles.name}>Diego Rosa</strong>

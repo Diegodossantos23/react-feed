@@ -1,5 +1,5 @@
 import { format, formatDistanceToNow } from 'date-fns';
-import enUS from 'date-fns/locale/en-US';
+import ptBR from 'date-fns/locale/pt-BR';
 import { useState } from 'react';
 
 import { Avatar } from '../Avatar/Avatar';
@@ -14,11 +14,11 @@ import styles from './Post.module.css';
 }*/
 
 export const Post = ({ author, publishedAt, content }) => {
-    const [comments, setComments] = useState(['Cool post bro!']);
+    const [comments, setComments] = useState(['Conteudo maneiro :D']);
     const [ newCommentText, setNewCommentText ] = useState('');
 
-    const publishedDateFormatted = format(publishedAt, "LLLL  d 'at' HH:mm 'h'", { locale: enUS })
-    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { locale: enUS, addSuffix: true })
+    const publishedDateFormatted = format(publishedAt, "LLLL  d 'at' HH:mm 'h'", { locale: ptBR })
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { locale: ptBR, addSuffix: true })
 
     const handleCreateNewComment = () => {
         event?.preventDefault();
