@@ -18,7 +18,7 @@
 ---
 
 ## 📄 Sobre
-Projeto desenvolvido para reflicar a funcionalidade de um feed de rede social, com o foco em gerenciamento de estados e operações de CRUD
+Projeto desenvolvido para replicar a funcionalidade de um feed de rede social, com o foco em gerenciamento de estados e operações de CRUD
 ---
 
 ## 🔝 Funcionalidades
