@@ -37,10 +37,10 @@ Antes de qualquer coisa, você precisa ter  o [Git](https://git-scm.com), o [npm
 
 ```bash
 # Clone este repositório:
-$ git clone https://github.com/Diegodossantos23/Aplicacao-React-Gerador-de-numero-aleatorio.git
+$ git clone https://github.com/Diegodossantos23/react-feed.git
 
 # Acesse à pasta do projeto:
-cd gerador
+cd react-feed
 
 # Instale as depêndencias:
 npm i
